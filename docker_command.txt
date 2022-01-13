@@ -1,0 +1,55 @@
+docker version
+docker images
+docker run ubuntu echo "Hello World"
+docker ps   
+docker ps -a
+docker run -i -t ubuntu bash
+	---> -i (interactive), -t()
+docker run --name ubuntu-universe ubuntu echo "Hello Universe"
+docker stop <container name>
+docker rm <container name>
+docker rm <container id>
+docker run -d <...>
+	--> run background but can't connect
+docker run -d -p 8080:80 <...>
+	-->port 8080 = service without container
+	-->port 80 = service in container
+docker rename <current_name> <new_name>
+docker exec -it <container_name> sh
+	--->with in shell --> ps -ef
+			  --> top
+docker top <name>
+docker stop <container_name>
+docker start <container_name>
+docker logs <container_name>
+docker logs <container_name> -f
+	--> follow
+docker stats
+	--> check memory
+	--> check load test
+docker inspect
+docker rm -f <contaniner_name>
+docker rmi <image_ID>
+docker rmi <full_name>
+	--> docker rmi ubuntu:18.04
+
+----------------------------------------
+docker build -t <name_image_thatwanto> .
+
+docker files 
+FROM [--platform=<platform>] <image> [AS <name>]
+WORKDIR /path/to/workdir
+COPY <src> <dest>
+RUN <command>
+EXPOSE <port>
+CMD <command> & ENTRYPOINT <command>
+	--> Ex. CMD "npm run serve"
+	--> Ex. ENTRYPOINT "npm run serve"
+
+
+
+
+
+
+
+
